@@ -19,11 +19,11 @@ DATE = raw_input("What is the date of this event?\n")
 #DATE = eg.enterbox("What is the date of the event?", "Date")
 
 def pickRandomBros(broList, numSample):
-	# Note that this function affects the original list
-	randomSet = random.sample(set(broList), numSample)
-	for bro in randomSet:
-		broList.remove(bro)
-	return randomSet
+    # Note that this function affects the original list
+    randomSet = random.sample(set(broList), numSample)
+    for bro in randomSet:
+        broList.remove(bro)
+    return randomSet
 
 doorShift1 = []
 doorShift2 = []
@@ -36,109 +36,102 @@ barShift4 = []
 
 
 # Create brotherhood lists
-gamma = ["Nathan Gomez"]
-delta = ["Jason Johl",
-                "Aaron Boussina"]
-epsilon = ["Curtis Siegfried",
-		"Mitchell Pok",
-		"Paul Levchenko",
-		"Conor Stanton",
-		"Manny Sabbagh",
-		"Rehman Minhas"]
-zeta = ["Taylor Ferguson",
-		"Evan Mason",
-		"Eric Gabrielli",
-		"Chris Farmer",
-		"Zachary Hawtof",
-		"Ian Mason",
-		"Elliot Surovell",
-		"Anurag Reddy",
-		"Ryan Flynn",
-		"Sam Rausser",
-		"Rikesh Patel",
-		"Jack Hendershott",
-		"Mark Traganza",
-		"Han Li",
-		"Evin Wieser",
-		"Matt Buckley",
-		"Erik Bartlett",
-		"Eric Smith",
-		"Spencer Hawley"]
-eta = ["Kyle Joyner",
-		"Richard Mercer",
-		"Andrew Soncrant",
-		"Joey Papador",
-		"Christian Collins",
-		"Anand Dharia",
-		"Francisco Torres",
-		"Donovan Frazer",
-		"Nick Alaverdyan",
-		"Mustapha Khokhar",
-		"Laith Alqaisi"]
-theta = ["Aman Khan",
-		"Andrew Ahmadi",
-		"Aneesh Prasad",
-		"Ben Kurschner",
-		"Christos Gkolias",
-		"Elliot Dunn",
-		"Harrison Agrusa",
-		"Jack Sweeney",
-		"Jason Blore",
-		"Jeremy Mack",
-		"Joe Labrum",
-		"Keeton Ross",
-		"Lawrence Dong",
-		"Matt Nisenboym",
-		"Mitchell Stieg",
-		"Nabil Faruoqi",
-		"Nathan Aminpour",
-		"Reese Levine",
-		"Ricky Philipossian",
-		"Riley Pok",
-		"Rokhan Khan",
-		"Sahand Saberi",
-		"Thomas Zorilla",
-		"Will Morrow"]
-iota = ["Alex Clark",
-                "Kenny Dang",
-                "Brent Freed",
-                "Jacob Gill",
-                "Darius Kay",
-                "David Kret",
-                "Will Lopez",
-                "Dhruv Malik",
-                "Ian Moon",
-                "Francisco Peralta",
-                "Brandt Sheets",
-                "Andrew Ting",
-                "Evan Wilson"]
+epsilon = ["Mitchell Pok",
+           "Paul Levchenko",
+           "Conor Stanton",
+           "Rehman Minhas"]
 
-pledges = ["Anthony Fortney",
-                "Steven Lin",
-                "Ford Noble",
-                "Ryan Leyba",
-                "Robert Mcilhatton",
-                "Jonathan",
-                "Morris Ravis",
-                "Ben Lalezari",
-                "Drew Hanson",
-                "Josh Bradley-Bevan",
-                "Steven Beelar",
-                "Gabriel Bogner",
-                "Dylan Dreyer",
-                "Luke Thomas",
-                "Tzartzas Tinos",
-                "Nate Parke",
-                "Dan Lee",
-                "Max Seltzer",
-                "Andy Frey",
-                "Nathan Kelleher",
-                "Arnav Chaturvedi",
-                "Sam Giacometti",
-                "Sam Bauman"]
+zeta = ["Taylor Ferguson",
+        "Evan Mason",
+        "Eric Gabrielli",
+        "Chris Farmer",
+        "Zachary Hawtof",
+        "Ian Mason",
+        "Elliot Surovell",
+        "Anurag Reddy",
+        "Ryan Flynn",
+        "Sam Rausser",
+        "Rikesh Patel",
+        "Jack Hendershott",
+        "Mark Traganza",
+        "Evin Wieser",
+        "Matt Buckley"]
+
+eta = ["Kyle Joyner",
+       "Richard Mercer",
+       "Andrew Soncrant",
+       "Joey Papador",
+       "Christian Collins",
+       "Anand Dharia",
+       "Francisco Torres",
+       "Mustapha Khokhar",
+       "Laith Alqaisi"]
+
+theta = ["Aman Khan",
+         "Andrew Ahmadi",
+         "Aneesh Prasad",
+         "Ben Kurschner",
+         "Christos Gkolias",
+         "Elliot Dunn",
+         "Harrison Agrusa",
+         "Jack Sweeney",
+         "Jason Blore",
+         "Jeremy Mack",
+         "Joe Labrum",
+         "Keeton Ross",
+         "Lawrence Dong",
+         "Matt Nisenboym",
+         "Mitchell Stieg",
+         "Nabil Farooqi",
+         "Nathan Aminpour",
+         "Reese Levine",
+         "Ricky Philipossian",
+         "Riley Pok",
+         "Rokhan Khan",
+         "Sahand Saberi",
+         "Thomas Zorrilla",
+         "Will Morrow"]
+
+iota = ["Alex Clark",
+        "Kenny Dang",
+        "Brent Freed",
+        "Jacob Gill",
+        "Darius Kay",
+        "David Kret",
+        "Will Lopez",
+        "Dhruv Malik",
+        "Ian Moon",
+        "Francisco Peralta",
+        "Brandt Sheets",
+        "Andrew Ting",
+        "Evan Wilson"]
+
+kappa = ["Anthony Fortney",
+         "Steven Lin",
+         "Ford Noble",
+         "Ryan Leyba",
+         "Robert Mcilhatton",
+         "Jonathan Tuttle",
+         "Morris Ravis",
+         "Ben Lalezari",
+         "Drew Hanson",
+         "Josh Bradley-Bevan",
+         "Steven Beelar",
+         "Gabriel Bogner",
+         "Dylan Dreyer",
+         "Luke Thomas",
+         "Konstantinos Tzartzas",
+         "Nate Parke",
+         "Dan Lee",
+         "Max Seltzer",
+         "Andy Frey",
+         "Nathan Kelleher",
+         "Arnav Chaturvedi",
+         "Sam Giacometti",
+         "Sam Bauman"]
 
 # Aggregate brothers gone from social event
-permaAbsent = ["Brent Freed", "Jack Hendershott", "Donovan Frazer", "Ryan Flynn"]
+permaAbsent = ["Zachary Hawtof", "Ryan Flynn", "Evin Wieser", "Christian Collins", ]
 
 # -------- Reese's addition for special events with more positions -----------
 specialEvent = raw_input("Is this a special event? ")
@@ -155,29 +148,29 @@ anyAbsent = raw_input("Will any brothers be absent from this event? ")
 #absentTtl = "Any Absent?"
 #anyAbsent = eg.enterbox(absentMsg, absentTtl)
 if anyAbsent.strip().lower() == "yes":
-	runAbsentSurvey = True
-        print("Please enter the names of each absent brother, one per line. Once " +
-              "you have entered all the names, end with a new line containing a " +
-              "single period. \n")
+    runAbsentSurvey = True
+    print("Please enter the names of each absent brother, one per line. Once " +
+          "you have entered all the names, end with a new line containing a " +
+          "single period. \n")
 else:
-	runAbsentSurvey = False
+    runAbsentSurvey = False
 
 absentTonight = []
 
 while runAbsentSurvey:
-	name = raw_input()
-	#msg = ("Please enter the name of the absent brother. "+
-	#	"If this is the last absent brother, end with a period.")
-	#ttl = "Absent Brothers"
-	#name = eg.enterbox(msg, ttl)
-        if name[0] == ".":
-                last = True
-	else:
-		last = False
-	if last:
-		runAbsentSurvey = False
-	else:
-		absentTonight += [name]
+    name = raw_input()
+    #msg = ("Please enter the name of the absent brother. "+
+    #    "If this is the last absent brother, end with a period.")
+    #ttl = "Absent Brothers"
+    #name = eg.enterbox(msg, ttl)
+    if name[0] == ".":
+        last = True
+    else:
+        last = False
+    if last:
+        runAbsentSurvey = False
+    else:
+        absentTonight += [name]
 
 print("Creating the schedule now.")
 
@@ -186,82 +179,92 @@ print("Creating the schedule now.")
 absent = permaAbsent + absentTonight
 
 # Create a subset of brothers that can do work during social event
-eligibleBros = list(set(epsilon + zeta + eta + theta + iota + pledges))
+eligibleBros = list(set(epsilon + zeta + eta + theta + iota + kappa))
 
 # -------------------------- Ryan's next addition -----------------------------
 # takes into account class in the likelihood of selection
 # also writes to excel file
 
 # List of brothers who are good at door
-brothers_good_at_door = ["Curtis Siegfried",
-						 "Taylor Ferguson",
-						 "Evan Mason",
-						 "Chris Farmer",
-						 "Zachary Hawtof",
-						 "Ian Mason",
-						 "Elliot Surovell",
-						 "Ryan Flynn",
-						 "Jack Hendershott",
-						 "Han Li",
-						 "Matthew Buckley",
-						 "Erik Bartlett",
-						 "Kyle Joyner",
-						 "Richard Mercer",
-						 "Andrew Soncrant",
-						 "Joey Papador",
-						 "Christian Collins",
-						 "Anand Dharia",
-						 "Francisco Torres",
-						 "Nick Alaverdyan",
-						 ]
+'''brothers_good_at_door = ["Curtis Siegfried",
+                         "Taylor Ferguson",
+                         "Evan Mason",
+                         "Chris Farmer",
+                         "Zachary Hawtof",
+                         "Ian Mason",
+                         "Elliot Surovell",
+                         "Ryan Flynn",
+                         "Jack Hendershott",
+                         "Han Li",
+                         "Matthew Buckley",
+                         "Erik Bartlett",
+                         "Kyle Joyner",
+                         "Richard Mercer",
+                         "Andrew Soncrant",
+                         "Joey Papador",
+                         "Christian Collins",
+                         "Anand Dharia",
+                         "Francisco Torres",
+                         "Nick Alaverdyan",
+                         ]'''
 
 # List of those available by class who are also not in brothers_good_at_door
-available_pledges = [pledge for pledge in pledges if pledge \
-	not in absent]
+available_kappa = [kappa_mem for kappa_mem in kappa if kappa_mem not in absent]
 available_iota = [iota_mem for iota_mem in iota if iota_mem not in absent]
 available_theta = [theta_mem for theta_mem in theta if theta_mem not in absent]
 available_eta = [eta_mem for eta_mem in eta if eta_mem not in absent]
 available_zeta = [zeta_mem for zeta_mem in zeta if zeta_mem not in absent]
 available_epsilon = [epsilon_mem for epsilon_mem in epsilon if epsilon_mem not in absent]
-available_delta = [delta_mem for delta_mem in delta if delta_mem not in absent]
-available_brothers_good_at_door = [bro for bro in brothers_good_at_door if bro not in absent]
+all_people = available_kappa + available_iota + available_theta + available_eta + available_zeta + available_epsilon
+
+# Get phone numbers for all brothers not absent
+f = open('PhiPsi-Contact-list.csv')
+lines = [line for line in f]
+f.close()
+lines = lines[1:]
+file_lasts = {}
+for line in lines:
+	line = line.split(',')
+	name = line[1].lower()
+	number = line[3].replace('-', '')
+	file_lasts[name] = number.strip()
 
 # Picks pledges out of available_pledges now so that they will not be given 
 # multiple shifts later
-doorShift2 = pickRandomBros(available_pledges, NUM_SLOTS)
-roofShift = pickRandomBros(available_pledges, 4)
+doorShift2 = pickRandomBros(available_kappa, NUM_SLOTS)
+roofShift = pickRandomBros(available_kappa, 4)
 if runSpecialScheduler:
-        doorShift4 = pickRandomBros(available_pledges, NUM_SLOTS)
+    doorShift4 = pickRandomBros(available_kappa, NUM_SLOTS)
 
 # List of tuples. First item in tuple is the available members of the class.
 # Second item is used as a weight so that lower class brothers (and pledges)
 # get shifts more often.
 if runSpecialScheduler: 
-        lst_availables = [(available_epsilon, .3), (available_zeta, .7),
-                          (available_eta, 1), (available_theta, 1),
-                          (available_iota, 1), (available_pledges, 1)]
+    lst_availables = [(available_epsilon, .3), (available_zeta, .7),
+                      (available_eta, 1), (available_theta, 1),
+                      (available_iota, 1), (available_kappa, 1)]
 
 else:
-        lst_availables = [(available_epsilon, .3), (available_zeta, .4),
-                          (available_eta, .5), (available_theta, .6), 
-                          (available_iota, .8),  (available_pledges, 1)]
+    lst_availables = [(available_epsilon, .3), (available_zeta, .4),
+                      (available_eta, .5), (available_theta, .6), 
+                      (available_iota, .8),  (available_kappa, 1)]
 
 final_lst = []
 
 # Similar to PickRandomBros, but not destructive of broList
 def pickRandomBrosFromClass(broList, numSample):
-	randomLst = random.sample(broList, numSample)
-	return randomLst
+    randomLst = random.sample(broList, numSample)
+    return randomLst
 
 # Places a number of bros from each class in the final list.  Higher
 # classes get less bros (per population) placed in this list
 for lst in lst_availables:
-	num_bros = int(len(lst[0]) * lst[1])
-	add_lst = pickRandomBrosFromClass(lst[0], num_bros)
-	for el in add_lst:
-		final_lst += [el,]
+    num_bros = int(len(lst[0]) * lst[1])
+    add_lst = pickRandomBrosFromClass(lst[0], num_bros)
+    for el in add_lst:
+        final_lst += [el,]
 
-# Picks only brothers good at door to work doorShift1 (alongside a pledge)
+
 doorShift1 = pickRandomBros(final_lst, NUM_SLOTS)
 barShift1 = pickRandomBros(final_lst, NUM_SLOTS)
 barShift2 = pickRandomBros(final_lst, NUM_SLOTS)
@@ -345,11 +348,11 @@ else:
     worksheet.write(2, 2, "Door 1", header)
 row = 3
 for bro in doorShift1:
-	if row == 9:
-		worksheet.write(row, 2, bro, names3)
-	else:
-		worksheet.write(row, 2, bro, names1)
-	row += 1
+    if row == 9:
+        worksheet.write(row, 2, bro, names3)
+    else:
+        worksheet.write(row, 2, bro, names1)
+    row += 1
 
 if runSpecialScheduler:
     worksheet.write(2, 3, "Back Door 2", header)
@@ -357,39 +360,39 @@ else:
     worksheet.write(2, 3, "Door 2", header)
 row = 3
 for bro in doorShift2:
-	if row == 9:
-		worksheet.write(row, 3, bro, names3)
-	else:
-		worksheet.write(row, 3, bro, names1)
-	row += 1
+    if row == 9:
+        worksheet.write(row, 3, bro, names3)
+    else:
+        worksheet.write(row, 3, bro, names1)
+    row += 1
 
 worksheet.write(2, 4, "Roof Shift", header)
 row = 5
 for i in range(3, 10):
-	if i < 5:
-		worksheet.write(i, 4, "", empty)
-	elif i >= 5 and i < 9:
-		worksheet.write(i, 4, roofShift[i-5], names1)
-	else:
-		worksheet.write(i, 4, "", empty1)
+    if i < 5:
+        worksheet.write(i, 4, "", empty)
+    elif i >= 5 and i < 9:
+        worksheet.write(i, 4, roofShift[i-5], names1)
+    else:
+        worksheet.write(i, 4, "", empty1)
 
 worksheet.write(2, 5, "Downstairs Bar 1", header)
 row = 3
 for bro in barShift1:
-	if row == 9:
-		worksheet.write(row, 5, bro, names3)
-	else:
-		worksheet.write(row, 5, bro, names1)
-	row += 1
+    if row == 9:
+        worksheet.write(row, 5, bro, names3)
+    else:
+        worksheet.write(row, 5, bro, names1)
+    row += 1
 
 worksheet.write(2, 6, "Downstairs Bar 2", header)
 row = 3
 for bro in barShift2:
-	if row == 9:
-		worksheet.write(row, 6, bro, names4)
-	else:
-		worksheet.write(row, 6, bro, names2)
-	row += 1
+    if row == 9:
+        worksheet.write(row, 6, bro, names4)
+    else:
+        worksheet.write(row, 6, bro, names2)
+    row += 1
 
 if runSpecialScheduler:
     worksheet.write(2, 7, "Upstairs Bar 1", header)
