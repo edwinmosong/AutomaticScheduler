@@ -224,10 +224,10 @@ f.close()
 lines = lines[1:]
 file_lasts = {}
 for line in lines:
-	line = line.split(',')
-	name = line[1].lower()
-	number = line[3].replace('-', '')
-	file_lasts[name] = number.strip()
+    line = line.split(',')
+    name = line[1].lower()
+    number = line[3].replace('-', '')
+    file_lasts[name] = number.strip()
 
 # Picks pledges out of available_pledges now so that they will not be given 
 # multiple shifts later
