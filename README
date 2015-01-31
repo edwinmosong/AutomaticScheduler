@@ -1,6 +1,28 @@
 This program uses an algorithm to assign event shifts to fraternity brothers
 and automatically exports the results to an excel file.
 
+Authors: Vlad Karchevsky, Ryan Flynn, Reese Levine
+
+*** Algorithm Explanation ***
+
+The selection process for shift assignment is really very straightforward.
+Here's how it works: You are all split up into classes. From each class, the
+program will select a certain percentage of people to place in the final pool.
+This percentage is different for each class: for a normal night, it will pick
+30% of epsilon class to put in the final pool, 40% of zeta, 50% of eta, 60% of
+theta, 80% of iota, and 100% of kappa. At this point, the final pool contains
+more people than we need for shifts, so people are chosen at random from this
+final pool and assigned shifts. So, your chance of getting a shift is your
+
+(class weighting) * (# of shifts / (summation of class sizes * class weightings))
+
+No, badge is not taken into account, just your class. No, there is no
+preference given to older people for earlier shifts. And yes, I have made
+it so I will never get a shift. If there is anything about this process that
+you don't like, I would LOVE to get you contributing code to this project;
+just get in contact with me, and I can get you up to speed.
+
+
 *** Running the Program ***
 
 Run with the command: python random_scheduler.py
