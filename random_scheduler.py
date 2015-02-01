@@ -130,6 +130,9 @@ kappa = ["Anthony Fortney",
          "Sam Giacometti",
          "Sam Bauman"]
 
+# Create a list of all brothers who are eligible for shifts.
+allbrothers = epsilon + zeta + eta + theta + iota + kappa 
+
 # Aggregate brothers gone from social event
 permaAbsent = ["Zachary Hawtof", "Ryan Flynn", "Evin Wieser", "Christian Collins", ]
 
@@ -143,41 +146,42 @@ else:
 
 # -------- Ryan's addition to make excluding absent brothers easier -----------
 
-anyAbsent = raw_input("Will any brothers be absent from this event? ")
-#absentMsg = "Will any brothers be absent from this event?"
-#absentTtl = "Any Absent?"
-#anyAbsent = eg.enterbox(absentMsg, absentTtl)
-if anyAbsent.strip().lower() == "yes":
-    runAbsentSurvey = True
+while True:
+    anyAbsent = raw_input("Will any brothers be absent from this event? (yes/no)")
+    if anyAbsent not in ['yes', 'no']:
+        print "Please answer yes or no."
+        continue
+    break
+    
+def runAbsentSurvey():
+    """A function to collect the names of absent brothers if any are absent."""
     print("Please enter the names of each absent brother, one per line. Once " +
           "you have entered all the names, end with a new line containing a " +
           "single period. \n")
-else:
-    runAbsentSurvey = False
+    absentTonight = []
+    while True:
+        name = raw_input()
+        # The raw '.' is our termination cue, return from this function
+        if name[0] == ".":
+            return absentTonight
+        else:
+            if name in allbrothers:
+                absentTonight += [name]
+            else:
+                print "The brother %s is not recognized by this program." % name
+                print "Please try again"
 
 absentTonight = []
+if anyAbsent == "yes":
+    absentTonight = runAbsentSurvey()
 
-while runAbsentSurvey:
-    name = raw_input()
-    #msg = ("Please enter the name of the absent brother. "+
-    #    "If this is the last absent brother, end with a period.")
-    #ttl = "Absent Brothers"
-    #name = eg.enterbox(msg, ttl)
-    if name[0] == ".":
-        last = True
-    else:
-        last = False
-    if last:
-        runAbsentSurvey = False
-    else:
-        absentTonight += [name]
-
-print("Creating the schedule now.")
 
 # ----------------------- End of Ryan's First Addition ------------------------
 
 absent = permaAbsent + absentTonight
 
+print("Creating the schedule with the following brothers excluded:\n",
+        absent)
 # Create a subset of brothers that can do work during social event
 eligibleBros = list(set(epsilon + zeta + eta + theta + iota + kappa))
 
@@ -218,16 +222,16 @@ available_epsilon = [epsilon_mem for epsilon_mem in epsilon if epsilon_mem not i
 all_people = available_kappa + available_iota + available_theta + available_eta + available_zeta + available_epsilon
 
 # Get phone numbers for all brothers not absent
-f = open('PhiPsi-Contact-list.csv')
-lines = [line for line in f]
-f.close()
-lines = lines[1:]
-file_lasts = {}
-for line in lines:
-    line = line.split(',')
-    name = line[1].lower()
-    number = line[3].replace('-', '')
-    file_lasts[name] = number.strip()
+#f = open('PhiPsi-Contact-list.csv')
+#lines = [line for line in f]
+#f.close()
+#lines = lines[1:]
+#file_lasts = {}
+#for line in lines:
+#    line = line.split(',')
+#    name = line[1].lower()
+#    number = line[3].replace('-', '')
+#    file_lasts[name] = number.strip()
 
 # Picks pledges out of available_pledges now so that they will not be given 
 # multiple shifts later
@@ -273,7 +277,6 @@ if runSpecialScheduler:
         barShift3 = pickRandomBros(final_lst, NUM_SLOTS)
         barShift4 = pickRandomBros(final_lst, NUM_SLOTS)
 # ---------------- Writes shift assignments to an excel file ------------------
-
 filename =  "PhiPsiShifts.xlsx"
 workbook = xlsxwriter.Workbook(filename)
 worksheet = workbook.add_worksheet()
