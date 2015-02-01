@@ -222,16 +222,16 @@ available_epsilon = [epsilon_mem for epsilon_mem in epsilon if epsilon_mem not i
 all_people = available_kappa + available_iota + available_theta + available_eta + available_zeta + available_epsilon
 
 # Get phone numbers for all brothers not absent
-#f = open('PhiPsi-Contact-list.csv')
-#lines = [line for line in f]
-#f.close()
-#lines = lines[1:]
-#file_lasts = {}
-#for line in lines:
-#    line = line.split(',')
-#    name = line[1].lower()
-#    number = line[3].replace('-', '')
-#    file_lasts[name] = number.strip()
+f = open('PhiPsi-Contact-list.csv')
+lines = [line for line in f]
+f.close()
+lines = lines[1:]
+file_lasts = {}
+for line in lines:
+    line = line.split(',')
+    name = line[1].lower()
+    number = line[3].replace('-', '')
+    file_lasts[name] = number.strip()
 
 # Picks pledges out of available_pledges now so that they will not be given 
 # multiple shifts later
